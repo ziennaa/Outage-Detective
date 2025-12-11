@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-black antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outage Detective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* DARK MODE (Default) */
+        --c-bg-app: 0 0 0;          /* black */
+        --c-bg-card: 10 10 10;      /* neutral-950 */
+        --c-bg-element: 23 23 23;   /* neutral-900 */
+        --c-border-strong: 38 38 38; /* neutral-800 */
+        --c-text-faint: 82 82 82;   /* neutral-600 */
+        --c-text-muted: 115 115 115; /* neutral-500 */
+        --c-text-body: 163 163 163;  /* neutral-400 */
+        --c-text-main-soft: 212 212 212; /* neutral-300 */
+        --c-text-main: 229 229 229;  /* neutral-200 */
+        --c-bg-inverse: 245 245 245; /* neutral-100 / button bg */
+      }
+
+      [data-theme="light"] {
+        /* LIGHT MODE (Inverted Scale) */
+        --c-bg-app: 255 255 255;       /* white */
+        --c-bg-card: 255 255 255;      /* white - card */
+        --c-bg-element: 245 245 245;   /* gray-100 - hover/input bg */
+        --c-border-strong: 229 229 229; /* gray-200 - border */
+        --c-text-faint: 163 163 163;   /* gray-400 - placeholder */
+        --c-text-muted: 115 115 115;   /* gray-500 - meta text */
+        --c-text-body: 64 64 64;       /* gray-700 - body text */
+        --c-text-main-soft: 38 38 38;  /* gray-800 - stronger text */
+        --c-text-main: 23 23 23;       /* gray-900 - headings */
+        --c-bg-inverse: 10 10 10;      /* black - button bg */
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      /* Custom scrollbar for dark/light theme */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--c-border-strong)); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--c-text-faint)); 
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              black: 'rgb(var(--c-bg-app) / <alpha-value>)',
+              white: 'rgb(var(--c-bg-inverse) / <alpha-value>)', /* Mapping white to inverse for button text on dark */
+              neutral: {
+                950: 'rgb(var(--c-bg-card) / <alpha-value>)',
+                900: 'rgb(var(--c-bg-element) / <alpha-value>)',
+                800: 'rgb(var(--c-border-strong) / <alpha-value>)',
+                600: 'rgb(var(--c-text-faint) / <alpha-value>)',
+                500: 'rgb(var(--c-text-muted) / <alpha-value>)',
+                400: 'rgb(var(--c-text-body) / <alpha-value>)',
+                300: 'rgb(var(--c-text-main-soft) / <alpha-value>)',
+                200: 'rgb(var(--c-text-main) / <alpha-value>)',
+                100: 'rgb(var(--c-bg-inverse) / <alpha-value>)',
+              }
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "react": "https://esm.sh/react@^19.2.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.32.0"
+  }
+}
+</script>
+</head>
+  <body class="h-full text-neutral-400 bg-black selection:bg-neutral-800 selection:text-neutral-200">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

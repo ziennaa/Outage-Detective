@@ -1,0 +1,5 @@
+{
+  "name": " Outage Detective",
+  "description": "A network incident forensics tool that analyzes logs to determine root causes, generate timelines, and draft postmortems.",
+  "requestFramePermissions": []
+}
