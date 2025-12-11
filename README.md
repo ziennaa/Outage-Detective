@@ -54,7 +54,7 @@ All of this runs inside **Google AI Studio Build** and can be exported as this s
 
 ## Demo
 
--  **Video demo (≤ 2 min):**  
+-  **Video demo:**  
   https://youtu.be/-RwPv814PTc?si=BHsHx5c-M5YxNrQS
 
 -  **Live AI Studio app:**  
@@ -120,5 +120,5 @@ Outage Detective turns:
 It doesn’t replace engineers, it gives them a starting point, helps them avoid blind spots, and standardizes how incidents are analyzed and documented.
 
 ---
-Built by Manya Kalra (@ziennaa) as part of the
+> Built by Manya Kalra [@ziennaa](https://github.com/ziennaa) as part of the
 Google DeepMind – Vibe Code with Gemini 3 Pro in AI Studio hackathon.
